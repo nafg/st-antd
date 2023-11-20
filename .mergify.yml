@@ -10,5 +10,4 @@ pull_request_rules:
           - author=nafg-scala-steward[bot]
       - check-success=Build and Test (ubuntu-latest, 2.13.12, temurin@11)
     actions:
-        queue:
-            name: default
+        queue: {}
