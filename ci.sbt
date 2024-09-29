@@ -15,13 +15,14 @@ val jgit      = new Git(repo)
 val remoteUrl = jgit.remoteList().call().asScala.filter(_.getName == "origin").flatMap(_.getURIs.asScala).headOption
 
 inThisBuild(List(
-  homepage                := remoteUrl.map(u => url(s"https://${u.getHost}/${u.getPath.stripSuffix(".git")}")),
-  licenses                := List("Apache-2.0" -> url("https://www.apache.org/licenses/LICENSE-2.0")),
-  developers              := List(
+  homepage                    := remoteUrl.map(u => url(s"https://${u.getHost}/${u.getPath.stripSuffix(".git")}")),
+  licenses                    := List("Apache-2.0" -> url("https://www.apache.org/licenses/LICENSE-2.0")),
+  developers                  := List(
     Developer("nafg", "Naftoli Gugenheim", "98384+nafg@users.noreply.github.com", url("https://github.com/nafg"))
   ),
   dynverGitDescribeOutput ~= (_.map(o => o.copy(dirtySuffix = sbtdynver.GitDirtySuffix("")))),
-  dynverSonatypeSnapshots := true,
+  dynverSonatypeSnapshots     := true,
+  githubWorkflowScalaVersions := githubWorkflowScalaVersions.value.map(_.replaceFirst("\\d+$", "x")),
   githubWorkflowTargetTags ++= Seq("v*"),
   githubWorkflowPublishTargetBranches := Seq(RefPredicate.StartsWith(Ref.Tag("v"))),
   githubWorkflowPublish               := Seq(
