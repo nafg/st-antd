@@ -1,5 +1,5 @@
 inThisBuild(Seq(
-  scalaVersion := "2.13.15",
+  scalaVersion := "2.13.16",
   organization := "io.github.nafg.antd",
   useYarn      := true
 ))
