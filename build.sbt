@@ -15,7 +15,7 @@ def settings(flavor: Flavour) =
     Compile / npmDependencies := Seq(
       "@types/react"     -> "18.2.37",
       "@types/react-dom" -> "18.2.15",
-      "antd"             -> "4.17.3"
+      "antd"             -> "5.25.1"
     ),
     Test / npmDependencies    := Seq(
       "react"     -> "18.2.0",
