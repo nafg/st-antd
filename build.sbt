@@ -13,13 +13,13 @@ def settings(flavor: Flavour) =
     stMinimize                := Selection.AllExcept("antd"),
     stOutputPackage           := "io.github.nafg.antd.facade",
     Compile / npmDependencies := Seq(
-      "@types/react"     -> "18.2.37",
-      "@types/react-dom" -> "18.2.15",
+      "@types/react"     -> "18.2.47",
+      "@types/react-dom" -> "18.2.18",
       "antd"             -> "5.25.1"
     ),
     Test / npmDependencies    := Seq(
-      "react"     -> "18.2.0",
-      "react-dom" -> "18.2.0"
+      "react"     -> "18.3.1",
+      "react-dom" -> "18.3.1"
     )
   )
 
